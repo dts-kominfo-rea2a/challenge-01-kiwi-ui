@@ -7,14 +7,24 @@
 //     firstUser : new Set([])
 // }
 
+const favoriteColor = {
+    firstUser: new Set(['Yellow', 'Pink', 'White', 'Purple']),
+    secondUser: new Set(['Blue', 'Black', 'Grey']),
+}
+const favoriteRestaurant = {
+    firstUser: new Set(['Bento', 'Sushi', 'Pancake', 'Eggy', 'Tempura', 'Bento', 'Eggy', 'Padang', 'Tteok', 'Sushi', 'Sushi']),
+    secondUser: new Set(['Tempura', 'Bento', 'Sushi', 'Pancake', 'Padang', 'Katsu', 'Geprek', 'Pancake', 'Eggy']),
+}
+
+
 const firstUser = {
-    "name" : "Monica",
-    "gender" : "Female" ,
-    "age" : "17",
-    "email" :"Monica@dingdong.com",
-    "favoriteColor":new Set(['Yellow','Pink', 'White', 'Purple']),
-    "isHavePet" :"Yes",
-    "education" : [
+    name: 'Monica',
+    gender: 'Female',
+    age: 17,
+    email: 'monica@dingdong.com',
+    favoriteColor: [...favoriteColor.firstUser],
+    isHavePet: 'Yes',
+    education: [
         {
             name: 'SD 01',
             city: 'Jakarta',
@@ -30,17 +40,16 @@ const firstUser = {
             city: 'Tangerang'
         }
     ],
-    "favoriteResataurant": new Set(['Bento','Sushi','Pancake','Eggy','Tempura','Bento','Eggy','Padang','Tteok','Sushi','Sushi'])
+    favoriteRestaurant: [...favoriteRestaurant.firstUser]
 };
 const secondUser = {
     name: 'Wendy',
     gender: 'Male',
     age: 23,
     email: 'wendy@dingdong.com',
-    favoriteColor: new Set(['Blue','Black', 'Grey']),
+    favoriteColor: [...favoriteColor.secondUser],
     isHavePet: 'No',
-    education: 
-    [
+    education: [
         {
             name: 'SD 02',
             city: 'Jakarta',
@@ -61,13 +70,12 @@ const secondUser = {
             city: 'Tangerang'
         }
     ],
-    favoriteRestaurant: new Set(['Tempura', 'Bento', 'Sushi', 'Pancake', 'Padang', 'Katsu', 'Geprek', 'Pancake', 'Eggy'])
+    favoriteRestaurant: [...favoriteRestaurant.secondUser]
 };
 
 // TODO: Masukkan hasil akhir dari kedua user di sini
-const users = [];
-users.push(firstUser);
-users.push(secondUser);
+const users = [firstUser, secondUser];
+
 // ! JANGAN MODIFIKASI LINE DI BAWAH
 function main() {
     console.log(users.length || users.size);
